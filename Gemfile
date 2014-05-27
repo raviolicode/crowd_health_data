@@ -42,4 +42,10 @@ end
 # gem 'capistrano', group: :development
 
 # Use debugger
-# gem 'debugger', group: [:development, :test]
+gem 'debugger', group: [:development, :test]
+
+gem 'devise'
+
+# ActiveAdmin
+gem 'activeadmin', :git => 'https://github.com/gregbell/active_admin'
+

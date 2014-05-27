@@ -19,7 +19,7 @@ development:
   encoding: unicode
   database: crowd_health_data_development
   pool: 5
-  username: crowd_health_data
+  user: [your username]
   password:
 
   # Connect on a TCP socket. Omitted by default since the client uses a
@@ -48,7 +48,7 @@ test:
   encoding: unicode
   database: crowd_health_data_test
   pool: 5
-  username: crowd_health_data
+  username: [your username]
   password:
 
 production:
@@ -56,5 +56,5 @@ production:
   encoding: unicode
   database: crowd_health_data_production
   pool: 5
-  username: crowd_health_data
+  username: [your username]
   password:
