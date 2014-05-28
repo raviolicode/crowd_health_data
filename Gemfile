@@ -50,6 +50,8 @@ gem 'devise'
 # ActiveAdmin
 gem 'activeadmin', :git => 'https://github.com/gregbell/active_admin'
 
+gem 'sorcery'
+
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 gem 'hashie'
