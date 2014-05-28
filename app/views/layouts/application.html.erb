@@ -1,27 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>CrowdHealthData</title>
+  <title>SaluDatos</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <meta charset="utf-8"></meta>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"></meta>
+  <meta content="width=device-width, initial-scale=1" name="viewport"></meta>
   <%= csrf_meta_tags %>
 </head>
 <body>
-<div id="nav">
-  <% if current_user %>
-    <%= link_to "Edit Profile", edit_user_path(current_user.id) %>
-    <%= link_to "Logout", :logout, method: :post %>
-  <% else %>
-    <%= link_to "Register", new_user_path %> |
-    <%= link_to "Login", :login %>
-  <% end %>
-</div>
-<div>
-  <p id="notice"><%= flash[:notice] %></p>
-  <p id="alert"><%= flash[:alert] %></p>
-</div>
+  <div class="container">
+    <div class="header">
+      <ul id="nav nav-pills pull-right">
+        <% if current_user %>
+          <li><%= link_to "Edit Profile", edit_user_path(current_user.id) %></li>
+          <li><%= link_to "Logout", :logout, method: :post %></li>
+        <% else %>
+          <li><%= link_to "Register", new_user_path %></li>
+          <li><%= link_to "Login", :login %></li>
+        <% end %>
+      </ul>
+    </div>
+    <div>
+      <p id="notice"><%= flash[:notice] %></p>
+      <p id="alert"><%= flash[:alert] %></p>
+    </div>
 
-<%= yield %>
-
+    <%= yield %>
+  </div>
 </body>
 </html>

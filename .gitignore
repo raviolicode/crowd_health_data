@@ -18,3 +18,5 @@
 # Ignore database.yml
 /config/database.yml
 .env
+
+*.DS_Store
