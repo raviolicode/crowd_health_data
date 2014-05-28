@@ -44,8 +44,13 @@ end
 # Use debugger
 gem 'debugger', group: [:development, :test]
 
+gem 'byebug'
 gem 'devise'
 
 # ActiveAdmin
 gem 'activeadmin', :git => 'https://github.com/gregbell/active_admin'
 
+gem 'omniauth-twitter'
+gem 'omniauth-facebook'
+gem 'hashie'
+# gem 'omniauth-google-oauth2'

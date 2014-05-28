@@ -5,6 +5,10 @@ CrowdHealthData::Application.routes.draw do
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
+
+  get "/auth/:provider/callback", to: "sessions#create" #, via: [:post]
+  get "/auth/failure", to: "sessions#error", as: "failure"
+  delete "/signout" => "sessions#destroy", :as => :signout
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
