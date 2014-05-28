@@ -1,4 +1,8 @@
 CrowdHealthData::Application.routes.draw do
+  root to: "providers#index"
+
+  resources :providers, only: [:index, :show]
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   # The priority is based upon order of creation: first created -> highest priority.
