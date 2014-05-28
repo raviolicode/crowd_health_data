@@ -2,11 +2,13 @@ AdminUser.create([{ email: 'admin@example.com', password: 'password' }]) unless 
 
 Provider.delete_all
 Department.delete_all
+Specialty.delete_all
 
 providers = []
 Dir.glob("data/*.json") do |file|
   department = Department.create(name: File.basename(file, ".*").split("_").map(&:capitalize).join(" "))
   puts "Departamento - #{department.name}"
+  puts "*" * 30
   providers = JSON.parse(IO.read(file).downcase)
   providers.each do |prov|
     provider = Hashie::Mash.new(prov)
@@ -21,6 +23,18 @@ Dir.glob("data/*.json") do |file|
       p.wait_surgery = provider.tiempos_espera.cirugia_general
     end
   end
+end
+# Appointments
+puts "*" * 30
+waiting_by_specialty = [{ name: 'Medicina General', days: 1},
+                    { name: 'Pediatria', days: 1},
+                    { name: 'Ginecologia', days: 1},
+                    { name: 'Cirugia General', days: 2}]
+
+waiting_by_specialty.each do |sp|
+  specialty_wait = Hashie::Mash.new(sp)
+  puts "Creando Tiempo de Espera para #{specialty_wait.name}"
+  Specialty.create(name: specialty_wait.name, max_waiting: specialty_wait.days)
 end
 
 # This file should contain all the record creation needed to seed the database with its default values.

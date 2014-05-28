@@ -1,5 +1,5 @@
 ActiveAdmin.register WaitingTime do
-  permit_params :appointment_id, :when, :provider_id, :waiting
+  permit_params :specialty_id, :when, :provider_id, :waiting
 
   
   # See permitted parameters documentation:

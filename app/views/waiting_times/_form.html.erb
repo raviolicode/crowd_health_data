@@ -1,0 +1,13 @@
+<%= form_tag specialty_provider_waiting_times_path, :method => :post do %>
+  <%#= hidden_field_tag :specialty_id, value: "#{@specialty.id}" %>
+  <div class="field">
+    <%= label_tag :waiting %><br />
+    <%= text_field_tag :waiting, nil, class: "form-control bfh-number" %>
+  </div>
+  <div class="field">
+    <%= label_tag :when %><br />
+    <%= text_field_tag :when, nil, class: "form-control bfh-datepicker", data: {format: "d-m-y", date: "today"} %>
+  </div>
+
+  <%= submit_tag 'Opina' %>
+<% end %>

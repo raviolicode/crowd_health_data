@@ -1,4 +1,4 @@
-ActiveAdmin.register Appointment do
+ActiveAdmin.register Specialty do
   permit_params :name, :max_waiting
 
   

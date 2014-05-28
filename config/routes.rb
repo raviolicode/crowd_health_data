@@ -1,14 +1,24 @@
 CrowdHealthData::Application.routes.draw do
-  root to: "providers#index"
+  resources :user_sessions
+  resources :users
+  get 'login' => 'user_sessions#new', :as => :login
+  post 'logout' => 'user_sessions#destroy', :as => :logout
 
-  resources :providers, only: [:index, :show]
+  resources :specialties, only: :show do
+    resources :departments, only: :show
+    resources :providers, only: [:show] do
+      resources :waiting_times, only: [:new, :create]
+    end
+  end
+  root to: 'specialties#show'
+
+  # get 'waiting_times/new/:provider_id/appointment/:appointment_id', to: 'waiting_times#new', as: :new_waiting_time
+  # post 'waiting_times/new/:provider_id/appointment/:appointment_id', to: 'waiting_times#create', as: :waiting_times
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
-  get "/auth/:provider/callback", to: "sessions#create" #, via: [:post]
-  get "/auth/failure", to: "sessions#error", as: "failure"
-  delete "/signout" => "sessions#destroy", :as => :signout
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

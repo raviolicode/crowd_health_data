@@ -1,0 +1,6 @@
+<h1>Especialidad: <%= @specialty.name %></h1>
+<h1>Por departamento: <%= @department.name %></h1>
+
+(select box)
+<br />
+<%= link_to 'MUCAM', specialty_provider_path(@specialty, Provider.find_by_name('Mucam')) %>

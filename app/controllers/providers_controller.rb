@@ -1,9 +1,12 @@
 class ProvidersController < ApplicationController
-  def index
-    @providers = Provider.all
-  end
+  before_action :specialty
 
   def show
-    @provider = Provider.find(params[:id])
+    provider
+  end
+
+  private
+  def provider
+    @provider ||= Provider.find(params[:id])
   end
 end

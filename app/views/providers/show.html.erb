@@ -1,6 +1,13 @@
 <h1><%= @provider.name %></h1>
+<h3><%= @provider.full_name %></h3>
 <h2>Information</h2>
 <p><%= link_to 'Website', @provider.web %></p>
-<p><%= "Address: #{@provider.address}" %></p>
 
-<%= link_to 'Index', providers_path %>
+Tiempos de Espera:
+Medicina General: <%= @provider.wait_general %>
+Pediatria: <%= @provider.wait_pediatrician %>
+Ginecologia: <%= @provider.wait_gynecologist %>
+Cirugia General: <%= @provider.wait_surgery %>
+
+<%= link_to 'Opina', new_specialty_provider_waiting_time_path(@specialty.id, @provider.id) %>
+

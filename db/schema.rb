@@ -49,22 +49,8 @@ ActiveRecord::Schema.define(version: 20140528160923) do
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
 
-  create_table "appointments", force: true do |t|
-    t.string   "name"
-    t.integer  "max_waiting"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "departments", force: true do |t|
     t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "facts", force: true do |t|
-    t.boolean  "official"
-    t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -83,6 +69,13 @@ ActiveRecord::Schema.define(version: 20140528160923) do
     t.integer  "department_id"
   end
 
+  create_table "specialties", force: true do |t|
+    t.string   "name"
+    t.integer  "max_waiting"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "users", force: true do |t|
     t.string   "email",            null: false
     t.string   "crypted_password", null: false
@@ -94,13 +87,13 @@ ActiveRecord::Schema.define(version: 20140528160923) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
 
   create_table "waiting_times", force: true do |t|
-    t.integer  "appointment_id"
+    t.integer  "specialty_id"
     t.datetime "when"
     t.integer  "waiting"
     t.integer  "provider_id"
   end
 
-  add_index "waiting_times", ["appointment_id"], name: "index_waiting_times_on_appointment_id", using: :btree
   add_index "waiting_times", ["provider_id"], name: "index_waiting_times_on_provider_id", using: :btree
+  add_index "waiting_times", ["specialty_id"], name: "index_waiting_times_on_specialty_id", using: :btree
 
 end
