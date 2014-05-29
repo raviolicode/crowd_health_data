@@ -1,4 +1,4 @@
-class ProvidersController < ApplicationController
+class ProvidersController < CategoriesController
   before_action :specialty, :provider, :load_categories
 
   def show

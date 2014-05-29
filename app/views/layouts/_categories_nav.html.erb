@@ -1,0 +1,7 @@
+  <%= form_tag search_category_path, id: "categories", method: :get do %>
+    <ul class="nav nav-pills">
+      <li><%= select_tag 'category[specialty_id]', options_from_collection_for_select(@specialties, :id, :name, @specialty.try(:id)) %></li>
+      <li><%= select_tag 'category[department_id]', options_from_collection_for_select(@departments, :id, :name, @department.try(:id)), prompt: "Departamento" %></li>
+      <li><%= select_tag 'category[provider_id]', options_from_collection_for_select(@providers, :id, :name, @provider.try(:id)), prompt: "Mutualista" %></li>
+    </ul>
+  <% end %>

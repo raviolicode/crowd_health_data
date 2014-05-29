@@ -1,4 +1,4 @@
-class DepartmentsController < ApplicationController
+class DepartmentsController < CategoriesController
   before_action :specialty, :department, :load_categories
 
   def show
