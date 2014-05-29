@@ -1,0 +1,15 @@
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: url(asset_path('glyphicons-halflings-regular.eot'));
+  src: url(asset_path('glyphicons-halflings-regular.eot?#iefix')) format('embedded-opentype'), url(asset_path('glyphicons-halflings-regular.woff')) format('woff'), url(asset_path('glyphicons-halflings-regular.ttf')) format('truetype'), url(asset_path('glyphicons-halflings-regular.svg#glyphicons_halflingsregular')) format('svg');
+}
+
+body {
+  background: #9ad9f9;
+}
+
+ul.nav.nav-pills li {
+  background: rgb(34, 184, 241);
+  color: rgb(51, 43, 59);
+}
+

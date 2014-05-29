@@ -12,4 +12,15 @@ class ApplicationController < ActionController::Base
     id = params[:specialty_id] || params[:id]
     @specialty ||= (Specialty.where(id: id).first || Specialty.first)
   end
+
+  def load_categories
+    @specialties = Specialty.all
+    @department = @provider.department if @provider
+    @providers = if @department
+                   Provider.where(department: @department)
+                 else
+                   Provider.all
+                 end
+    @departments = Department.all
+  end
 end

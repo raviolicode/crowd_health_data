@@ -1,8 +1,7 @@
 class ProvidersController < ApplicationController
-  before_action :specialty
+  before_action :specialty, :provider, :load_categories
 
   def show
-    provider
   end
 
   private

@@ -12,7 +12,7 @@
 <body>
   <div class="container">
     <div class="header">
-      <ul id="nav nav-pills pull-right">
+      <ul class="nav nav-pills pull-right">
         <% if current_user %>
           <li><%= link_to "Edit Profile", edit_user_path(current_user.id) %></li>
           <li><%= link_to "Logout", :logout, method: :post %></li>
@@ -21,7 +21,15 @@
           <li><%= link_to "Login", :login %></li>
         <% end %>
       </ul>
+      <h3 class="text_muted">SaluDatos</h3>
     </div>
+    <%= form_tag search_category_path, id: "categories", method: :get do %>
+      <ul class="nav nav-pills">
+        <li><%= select_tag 'category[specialty_id]', options_from_collection_for_select(@specialties, :id, :name, @specialty.try(:id)) %></li>
+        <li><%= select_tag 'category[department_id]', options_from_collection_for_select(@departments, :id, :name, @department.try(:id)), prompt: "Departamento" %></li>
+        <li><%= select_tag 'category[provider_id]', options_from_collection_for_select(@providers, :id, :name, @provider.try(:id)), prompt: "Mutualista" %></li>
+      </ul>
+    <% end %>
     <div>
       <p id="notice"><%= flash[:notice] %></p>
       <p id="alert"><%= flash[:alert] %></p>

@@ -1,8 +1,7 @@
 class DepartmentsController < ApplicationController
-  before_action :specialty
+  before_action :specialty, :department, :load_categories
 
   def show
-    department
   end
 
   private

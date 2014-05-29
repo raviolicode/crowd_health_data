@@ -12,6 +12,8 @@ CrowdHealthData::Application.routes.draw do
   end
   root to: 'specialties#show'
 
+  get "search/category", to: "search#category"
+  # get 'select_category/:specialty_id/:department_id/:provider_id', to: 'select_category'
   # get 'waiting_times/new/:provider_id/appointment/:appointment_id', to: 'waiting_times#new', as: :new_waiting_time
   # post 'waiting_times/new/:provider_id/appointment/:appointment_id', to: 'waiting_times#create', as: :waiting_times
 
