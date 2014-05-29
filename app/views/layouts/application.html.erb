@@ -9,26 +9,21 @@
   <meta content="width=device-width, initial-scale=1" name="viewport"></meta>
   <%= csrf_meta_tags %>
 </head>
-<body>
+  <body>
   <div class="container">
-    <div class="header">
-      <ul class="nav nav-pills pull-right">
-        <% if current_user %>
-          <li><%= link_to "Edit Profile", edit_user_path(current_user.id) %></li>
-          <li><%= link_to "Logout", :logout, method: :post %></li>
-        <% else %>
-          <li><%= link_to "Register", new_user_path %></li>
-          <li><%= link_to "Login", :login %></li>
+    <div class="row">
+      <div class="col-md-8 marginAuto">
+        <%= render partial: 'layouts/navbar' %>
+      <div>
+        <% if flash[:notice] %>
+        <p id="notice" class="alert alert-success"><%= flash[:notice] %></p>
         <% end %>
-      </ul>
-      <h3 class="text_muted"><%= link_to 'SaluDatos', root_path %></h3>
+        <% if flash[:alert] %>
+        <p id="alert" class="alert alert-danger"><%= flash[:alert] %></p>
+        <% end %>
+      </div>
+      <%= content_for?(:categories) ? yield(:categories) : nil %>
+      <%= yield %>
     </div>
-    <div>
-      <p id="notice"><%= flash[:notice] %></p>
-      <p id="alert"><%= flash[:alert] %></p>
-    </div>
-    <%= content_for?(:categories) ? yield(:categories) : nil %>
-    <%= yield %>
-  </div>
-</body>
+  </body>
 </html>

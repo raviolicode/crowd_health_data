@@ -1,13 +1,17 @@
 <%= form_tag specialty_provider_waiting_times_path, :method => :post do %>
   <%#= hidden_field_tag :specialty_id, value: "#{@specialty.id}" %>
-  <div class="field">
-    <%= label_tag :waiting %><br />
-    <%= text_field_tag :waiting, nil, class: "form-control bfh-number" %>
-  </div>
-  <div class="field">
-    <%= label_tag :when %><br />
-    <%= text_field_tag :when, nil, class: "form-control bfh-datepicker", data: {format: "d-m-y", date: "today"} %>
-  </div>
+  <fieldset>
+    <div class="form-group">
+      <%= label_tag 'Waiting time (in days)' %><br />
+      <%= text_field_tag :waiting, nil, class: "form-control bfh-number", type: "number" %>
+    </div>
+    <div class="form-group">
+      <%= label_tag 'When did you asked this appointment?' %><br />
+      <%= text_field_tag :when, nil, class: "form-control bfh-datepicker", data: {format: "d-m-y", date: "today"}, type: "date" %>
+    </div>
 
-  <%= submit_tag 'Opina' %>
+    <div class="form-group">
+    <%= submit_tag 'Opina', class: "btn btn-default" %>
+    </div>
+  </fieldset>
 <% end %>

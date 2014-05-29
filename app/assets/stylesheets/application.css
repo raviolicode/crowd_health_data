@@ -10,7 +10,7 @@
  *
  *= require_self
  *= require bootstrap.min
- *= require bootstrap-responsive.min
+ *= require jquery.selectBoxIt
  *= require general
  *= require providers
  */

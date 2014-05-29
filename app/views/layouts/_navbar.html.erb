@@ -1,0 +1,52 @@
+<div class="header">
+  <% if current_user %>
+    <button class="btn btn-default navbar-btn Headnav"><%= link_to "Perfil", edit_user_path(current_user.id) %></button>
+    <button class="btn btn-default navbar-btn Headnav"><%= link_to "Salir", :logout, method: :post %></button>
+  <% else %>
+    <button class="btn btn-default navbar-btn Headnav"><%= link_to "Registro", new_user_path %></button>
+    <button class="btn btn-default navbar-btn Headnav"><%= link_to "Login", :login %></button>
+  <% end %>
+  <button type="button" class="btn btn-default navbar-btn Headnav">Contacto</button>
+  <button type="button" class="btn btn-default navbar-btn Headnav">Propósito</button>
+  <button type="button" class="btn btn-default navbar-btn Headnav"><%= link_to 'Inicio', root_path %></button>
+  <h1><%= link_to 'SaluDatos', root_path %></h1>
+
+  <br clear="all" />
+</div>
+<!-- <div class="ContainerBg"> -->
+  <!-- <div> -->
+    <!-- <div class="btn&#45;group"> -->
+      <!-- <button data&#45;toggle="dropdown" class="btn dropdown&#45;toggle selected">Departamento <span class="caret"></span></button> -->
+      <!-- <ul class="dropdown&#45;menu"> -->
+      <!-- </ul> -->
+    <!--   <ul class="dropdown&#45;menu"> -->
+    <!--     <li><a href="#">Action</a></li> -->
+    <!--     <li><a href="#">Another action</a></li> -->
+    <!--     <li class="divider"></li> -->
+    <!--     <li><a href="#">Separated link</a></li> -->
+    <!--   </ul> -->
+    <!-- </div> -->
+    <!-- <div class="btn&#45;group"> -->
+    <!--   <button data&#45;toggle="dropdown" class="btn dropdown&#45;toggle selected">Mutualista  <span class="caret"></span></button> -->
+    <!--   <ul class="dropdown&#45;menu"> -->
+    <!--     <li><a href="#">Action</a></li> -->
+    <!--     <li><a href="#">Another action</a></li> -->
+    <!--     <li class="divider"></li> -->
+    <!--     <li><a href="#">Separated link</a></li> -->
+    <!--   </ul> -->
+    <!-- </div> -->
+    <!-- <div class="btn&#45;group"> -->
+    <!--   <button data&#45;toggle="dropdown" class="btn dropdown&#45;toggle">Tiempo <span class="caret"></span></button> -->
+    <!-- </div> -->
+    <!-- <div class="btn&#45;group"> -->
+    <!--   <button data&#45;toggle="dropdown" class="btn dropdown&#45;toggle">Cirugía General <span class="caret"></span></button> -->
+    <!--   <ul class="dropdown&#45;menu"> -->
+    <!--     <li><a href="#">Action</a></li> -->
+    <!--     <li><a href="#">Another action</a></li> -->
+    <!--     <li class="divider"></li> -->
+    <!--     <li><a href="#">Separated link</a></li> -->
+    <!--   </ul> -->
+    <!-- </div> -->
+  <!-- </div> -->
+<!-- </div> -->
+

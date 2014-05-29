@@ -1,13 +1,91 @@
-<h1 class="uppercase"><%= @provider.name %></h1>
-<h3><%= @provider.full_name %></h3>
-<h2>Information</h2>
-<p><%= link_to 'Website', @provider.web %></p>
+<!-- <h1 class="uppercase"><%= @provider.name %></h1> -->
+<!-- <h3><%= @provider.full_name %></h3> -->
+<!-- <h2>Information</h2> -->
+<!-- <p><%= link_to 'Website', @provider.web %></p> -->
+<!--  -->
+<!-- Tiempos de Espera: -->
+<!-- Medicina General: <%= @provider.wait_general %> -->
+<!-- Pediatria: <%= @provider.wait_pediatrician %> -->
+<!-- Ginecologia: <%= @provider.wait_gynecologist %> -->
+<!-- Cirugia General: <%= @provider.wait_surgery %> -->
 
-Tiempos de Espera:
-Medicina General: <%= @provider.wait_general %>
-Pediatria: <%= @provider.wait_pediatrician %>
-Ginecologia: <%= @provider.wait_gynecologist %>
-Cirugia General: <%= @provider.wait_surgery %>
 
-<%= link_to 'Opina', new_specialty_provider_waiting_time_path(@specialty.id, @provider.id) %>
+<div class="ContainerBg">
+  <div class="quickStatsMonitor">
+    <li class="redStatFigQuick">
+    <h2>0.5 día</h2>
+
+    </li>
+    <li class="orangeGoldFigQuick">
+    <h2>32 día</h2>
+
+    </li>
+    <small>¿Qué es esto?</small>
+  </div>
+  <div class="statsFigurRow">
+    <h2 class="leftCarat" ><strong>¿Cuál es el plazo máximo para<br />
+        recibir una consulta médica?</strong> </h2>
+    <div class="row">
+      <div class="col-lg-12 statsFigure">
+        <div class="col-md-6">
+          <li class="greenStatFig">
+          <h2>2 <br />
+            <span>día</span></h2>
+          <h3>Lo publicado en la Ley</h3>
+          </li>
+          <p>Plazo máximo de espera para
+          consulta externa desde la fecha
+          de la solicitud.</p>
+          <small>Promedio de tiempo de espera
+            Constitución de la República Oriental
+            del Uruguay </small> </div>
+        <div class="col-md-6">
+          <li class="redStatFig">
+          <h2>2.5 <br />
+            <span>día</span></h2>
+          <h3>Lo publicado en la Ley</h3>
+          </li>
+          <p>Plazo máximo de espera para
+          consulta externa desde la fecha
+          de la solicitud.</p>
+          <small>Promedio de tiempo de espera
+            Constitución de la República Oriental
+            del Uruguay </small> </div>
+      </div>
+    </div>
+  </div>
+  <div class="statsFigurRow">
+    <h2 class="leftCarat" ><strong>¿Para vos los plazos de espera<br />
+        fueron otros?</strong> </h2>
+    <div class="row">
+      <div class="col-lg-12 statsFigure">
+        <div class="col-md-6">
+          <li class="orangeGoldStatFig">
+          <h2>18 <br />
+            <span>día</span></h2>
+          <h3>Lo que a la
+            gente le pasó</h3>
+          </li>
+          <p>Plazo máximo de espera para
+          consulta externa desde la fecha
+          de la solicitud.</p>
+          <small>Promedio de tiempo de espera
+            Constitución de la República Oriental
+            del Uruguay </small> </div>
+        <div class="col-md-6">
+          <li class="opinado">
+          <h2>90 personas han opinado</h2>
+          <%= image_tag "statsInfo.png" %>
+
+          </li>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row"><div class="col-lg-12 margin_l30px"><%= image_tag "graph1.png" %> </div></div>
+    <div class="row"><div class="col-lg-12 Opina">
+
+    <%= link_to 'Opina', new_specialty_provider_waiting_time_path(@specialty.id, @provider.id) %>
+      <br clear="all" /></div>
+
 

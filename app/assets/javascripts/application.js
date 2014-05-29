@@ -15,3 +15,7 @@
 //= require turbolinks
 //= require_tree .
 //= require application
+//= require bootstrap.min
+//= require jquery.selectBoxIt.min
+//= require d3.v3.min
+//= require providers
